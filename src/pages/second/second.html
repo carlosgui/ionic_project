@@ -16,4 +16,11 @@
 <ion-content padding>
  <button color="custom" ion-button (click)="navigateBack()">back</button>
  <button ion-button (click)="navigateToThridPage()">Goto 3 page</button>
+
+  <ion-item>
+    <ion-label floating> Name </ion-label>
+    <ion-input type="text" [(ngModel)]="personName"></ion-input>
+  </ion-item>
+
+  <button ion-button block clear (click)="showGreeting(personName)">Show Greeting</button>
 </ion-content>

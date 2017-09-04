@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ToastController } from 'ionic-angular';
 
 /**
  * Generated class for the SecondPage page.
@@ -15,11 +16,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SecondPage {
 
-    message: string;
+    message: String;
+    personName: String;
 
-  constructor(private navCtrl: NavController, private navParams: NavParams) {
+  constructor(private navCtrl: NavController, private navParams: NavParams, private toast: ToastController) {
       this.message = this.navParams.get('message');
       alert(this.message);
+  }
+
+  showGreeting(name: string){
+    console.log(name);
+    console.log(this.personName);
+    this.toast.create({message: `HELLO ${name}`, duration: 3000 }).present();
   }
 
   navigateBack(): void {
